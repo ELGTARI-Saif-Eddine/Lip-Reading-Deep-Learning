@@ -28,13 +28,13 @@ This repository contains the code developed by TensorFlow_ for the following pap
 .. _Nasser M. Nasrabadi: http://nassernasrabadi.wixsite.com/mysite
 
 
-.. |im1| image:: readme_images/1.gif
+.. |im1| image:: 1.gif
 
 
-.. |im2| image:: readme_images/2.gif
+.. |im2| image:: 2.gif
 
 
-.. |im3| image:: readme_images/3.gif
+.. |im3| image:: 3.gif
 
 
 |im1| |im2| |im3|
