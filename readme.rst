@@ -30,17 +30,6 @@ This repository contains the code developed by TensorFlow_ for the following pap
 The input pipeline must be prepared by the users. This code is aimed to provide the implementation for **Coupled 3D Convolutional Neural Networks** for
 audio-visual matching. **Lip-reading** can be a specific application for this work.
 
-If you used this code, please kindly consider citing the following paper:
-
-.. code:: shell
-
-  @article{torfi20173d,
-    title={3D Convolutional Neural Networks for Cross Audio-Visual Matching Recognition},
-    author={Torfi, Amirsina and Iranmanesh, Seyed Mehdi and Nasrabadi, Nasser and Dawson, Jeremy},
-    journal={IEEE Access},
-    year={2017},
-    publisher={IEEE}
-    }
 
 #################
 Table of Contents
