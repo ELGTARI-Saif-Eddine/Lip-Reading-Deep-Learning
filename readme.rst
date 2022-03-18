@@ -1,7 +1,6 @@
 ===========================================================================================================================
 Lip Reading - Cross Audio-Visual Recognition using 3D Convolutional Neural Networks - `Official Project Page`_
 ===========================================================================================================================
-
 .. image:: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
     :target: https://github.com/astorfi/3D-convolutional-Audio-Visual/pulls
 .. image:: https://badges.frapsoft.com/os/v2/open-source.svg?v=102
@@ -72,7 +71,7 @@ Training/Evaluation DEMO
 
 |training|
 
-.. |training| image:: readme_images/liptrackingdemo.png
+.. |training| image:: liptrackingdemo.png
     :target: https://asciinema.org/a/kXIDzZt1UzRioL1gDPzOy9VkZ
 
 ~~~~~~~~~~~~~~~~~
@@ -81,7 +80,7 @@ Lip Tracking DEMO
 
 |liptrackingdemo|
 
-.. |liptrackingdemo| image:: readme_images/liptrackingdemo.png
+.. |liptrackingdemo| image:: liptrackingdemo.png
     :target: https://asciinema.org/a/RiZtscEJscrjLUIhZKkoG3GVm
 .. https://asciinema.org/a/m1r1OaoUXsEECNZKzpkfAXg7y
 
@@ -177,7 +176,7 @@ dlib library [dlib]_. Finally, all mouth areas are resized to have the same size
 cube. The dataset does not contain any audio files. The audio files are extracted from
 videos using FFmpeg framework [ffmpeg]_. The processing pipeline is the below figure.
 
-.. image:: readme_images/processing.gif
+.. image:: processing.gif
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Input Pipeline for this work
@@ -208,7 +207,7 @@ forms 40 MFEC features) can be derived which form a
 speech feature cube. Each input feature map for a single audio stream has the dimensionality of 15 × 40 × 3.
 This representation is depicted in the following figure:
 
-.. image:: readme_images/Speech_GIF.gif
+.. image:: Speech_GIF.gif
 
 The **speech features** have been extracted using [SpeechPy]_ package.
 
@@ -222,7 +221,7 @@ The input of the visual stream of the network is a cube of size 9x60x100,
 where 9 is the number of frames that represent the temporal information. Each
 channel is a 60x100 gray-scale image of mouth region.
 
-.. image:: readme_images/lip_motion.jpg
+.. image:: lip_motion.jpg
 
 
 
@@ -239,7 +238,7 @@ considered as a spatial dimension, and the stacked audio frames form the
 temporal dimension. In the proposed 3D CNN architecture, the convolutional operations
 are performed on successive temporal frames for both audio-visual streams.
 
-.. image:: readme_images/DNN-Coupled.png
+.. image:: DNN-Coupled.png
 
 
 ----------------------
@@ -272,10 +271,10 @@ Results
 The below results demonstrate effects of the proposed method on the accuracy
 and the speed of convergence.
 
-.. |accuracy| image:: readme_images/accuracy-bar-pairselection.png
+.. |accuracy| image:: accuracy-bar-pairselection.png
 
 
-.. |converge| image:: readme_images/convergence-speed.png
+.. |converge| image:: convergence-speed.png
 
 
 |accuracy|
