@@ -103,56 +103,14 @@ Code Implementation
 The input pipeline must be provided by the user. The rest of the implementation consider the dataset
 which contains the utterance-based extracted features.
 
-~~~~~~~~~~~~~
-Lip Tracking
-~~~~~~~~~~~~~
-
-For lip tracking, the desired video must be fed as the input. At first, cd to the
-corresponding directory:
-
-.. code:: shell
-
-    cd code/lip_tracking
-
-The run the dedicated ``python file`` as below:
-
-.. code:: shell
-
-    python VisualizeLip.py --input input_video_file_name.ext --output output_video_file_name.ext
-
-Running the aforementioned script extracts the lip motions by saving the mouth
-area of each frame and create the output video with a rectangular around the
-mouth area for better visualization.
-
-The required ``arguments`` are defined by the following python script which
-have been defined in the ``VisualizeLip.py`` file:
-
-.. code:: python
-
-  ap = argparse.ArgumentParser()
-  ap.add_argument("-i", "--input", required=True,
-               help="path to input video file")
-  ap.add_argument("-o", "--output", required=True,
-               help="path to output video file")
-  ap.add_argument("-f", "--fps", type=int, default=30,
-               help="FPS of output video")
-  ap.add_argument("-c", "--codec", type=str, default="MJPG",
-               help="codec of output video")
-  args = vars(ap.parse_args())
-
-Some of the defined arguments have their default values and no further action is
-required by them.
-
-
-
 ~~~~~~~~~~~
 Processing
 ~~~~~~~~~~~
 
 In the visual section, the videos are post-processed to have an equal frame rate of 30 f/s. Then, face tracking and mouth area extraction are performed on the videos using the
-dlib library [dlib]_. Finally, all mouth areas are resized to have the same size and concatenated to form the input feature
+dlib library. Finally, all mouth areas are resized to have the same size and concatenated to form the input feature
 cube. The dataset does not contain any audio files. The audio files are extracted from
-videos using FFmpeg framework [ffmpeg]_. The processing pipeline is the below figure.
+videos using FFmpeg framework. The processing pipeline is the below figure.
 
 .. image:: processing.gif
 
@@ -187,9 +145,6 @@ This representation is depicted in the following figure:
 
 .. image:: Speech_GIF.gif
 
-The **speech features** have been extracted using [SpeechPy]_ package.
-
-**Please refer to** ``code/speech_input/input_feature.py`` **for having an idea about how the input pipeline works.**
 
 **Visual Net**
 
@@ -219,28 +174,6 @@ are performed on successive temporal frames for both audio-visual streams.
 .. image:: DNN-Coupled.png
 
 
-----------------------
-Training / Evaluation
-----------------------
-
-At first, clone the repository. Then, cd to the dedicated directory:
-
-.. code:: shell
-
-    cd code/training_evaluation
-
-Finally, the ``train.py`` file must be executed:
-
-.. code:: shell
-
-    python train.py
-
-For evaluation phase, a similar script must be executed:
-
-.. code:: shell
-
-    python test.py
-
 
 --------
 Results
@@ -263,33 +196,4 @@ The best results, which is the right-most one, belongs to our proposed method.
 
 The effect of proposed **Online Pair Selection** method has been shown in the figure.
 
--------------
-Disclaimer
--------------
-
-The current version of the code does not contain the adaptive pair selection method proposed by `3D Convolutional Neural Networks for Cross Audio-Visual Matching Recognition`_ paper. Just a simple pair selection with hard thresholding is included at the moment.
-
-
-
--------------
-Contribution
--------------
-
-We are looking forward to your kind feedback. Please help us to improve the code and make
-our work better. For contribution, please create the pull request and we will investigate it promptly.
-Once again, we appreciate your feedback and code inspections.
-
-
-.. rubric:: references
-
-.. [SpeechPy] @misc{amirsina_torfi_2017_810392,
-                    author       = {Amirsina Torfi},
-                    title        = {astorfi/speech_feature_extraction: SpeechPy},
-                    month        = jun,
-                    year         = 2017,
-                    doi          = {10.5281/zenodo.810392},
-                    url          = {https://doi.org/10.5281/zenodo.810391}}
-
-.. [dlib] D. E. King. Dlib-ml: A machine learning toolkit. Journal of Machine Learning Research, 10:1755–1758, 2009.
-.. [ffmpeg] F. Developers. FFmpeg tool (version be1d324) [software], 2016.
 
