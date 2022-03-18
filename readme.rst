@@ -31,14 +31,6 @@ The input pipeline must be prepared by the users. This code is aimed to provide 
 audio-visual matching. **Lip-reading** can be a specific application for this work.
 
 
-#################
-Table of Contents
-#################
-.. contents::
-  :local:
-  :depth: 3
-
-
 -----
 DEMO
 -----
